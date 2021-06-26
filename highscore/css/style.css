@@ -1,0 +1,10 @@
+#highscores {
+    position:absolute;
+    width:300px;
+    height:600px;
+    bottom:0px;
+    right:25%;
+    left:50%;
+    margin-left:-150px;
+    text-align: center;
+}
