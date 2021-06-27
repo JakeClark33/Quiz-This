@@ -1,57 +1,13 @@
-
-
- 
- let questions = [
-
-    {
-        question: 'Commonly used data types do not include?',
-        choices: 
-            "Numbers",
-            "Booleon",
-            "Alerts",
-            "Strings",
-        answer: 3,
-        }
-    {
-        question: 'The condiution in an if/else statement ins enclosed in?',
-        choices: 
-            "Parentheses",
-            "Curly Brackets",
-            "Square Brackets",
-            "Quotations",
-        answer: 1,
-        }
-    {
-        question: 'A very useful tool during development and debugging for printing content to the debugger is?',
-        answer: 2,
-        choices:[ 
-            "Console.log",
-            "GitBash Terminal",
-            "for loop",
-            "JavaScript",
-    ]
-        },
-    {
-        question:'Arrays in JavaScript can be used to store?',
-        answer: 4,
-        choices: [
-            "Booleon",
-            "Other Arrays",
-            "Numbers and Strings",
-            "All of the Above",
-        ]
-        },
-    {
-        question:'String values must be enclosed with _______ when being assigned to a variable?',
-        answer: 2,
-        choices: [
-            "Curly Brackets",
-            "Square Brackets",
-            "Parentheses",
-            "Commas",
-        ]
-    }
-
+const startBtn = document.querySelector(".startBtn button");
+const infoBox = document.querySelector(".info-box");
+const exitBtn = info_box.querySelector(".buttons .quit");
+const continueBtn = info_box.querySelector(".buttons .restart");
+const quizBox = document.querySelector(".quiz-box");
+const resultBox = document.querySelector(".result-box");
+const optionList = document.querySelector(".option-list");
+const timeLine = document.querySelector("header .time-line");
+const timeText = document.querySelector(".timer .time-left-txt");
+const timeCount = document.querySelector(".timer .timer-sec");
 
 
  // Build elements for the home page
