@@ -8,12 +8,29 @@
     float: right;
 }
 
-.container {
+.info-box {
     position:absolute;
-    width:300px;
+    display:flex;
+    width:600px;
     height:300px;
     bottom:200px;
-    right:25%;
-    left:50%;
+    right:auto;
+    left:500px;
     margin-left:-150px;
+    align-items: center;
+  }
+  .rules {
+      align-items: center;
+  }
+  .welcome {
+      font-weight: 800;
+      font-size: 28px;
+      align-items: center;
+      margin-left: 50px;
+  }
+  .btn1 {
+     align-items: center;
+     margin-left: 225px;
+     background-color: rgb(174, 87, 255);
+     color:cornsilk;
   }
