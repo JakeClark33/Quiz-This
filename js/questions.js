@@ -1,25 +1,67 @@
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
-Create an event listener toi start the timer interval.a
+//Create an event listener toi start the timer interval.a
 
- THEN a timer starts and I am presented with a question
+ //THEN a timer starts and I am presented with a question
 
 
 // WHEN I answer a question
 
 // Create an array of all of the questions
 // All questions will need a title multiple choices and an answer.
- Creeate a function that will ask one question at a time.
+ //Creeate a function that will ask one question at a time.
+
+ 
+
+ function generateQuiz (quizContainer, resultsContainer, SubmitButton) {
+displayQuestions()
+
+    function displayQuestions (QuizContainer){
 
 
+        var output = [];
 
- function generateQuiz (questions, quizContainer, resultsContainer, SubmitButton) {
+        var answers;
+
+        //for each question reset the list of answers to
+
+        for(var i = 0; i < quizQuestions.length; i++) {
+
+            console.log(quizQuestions[i].answers);
+            answers = [];
+
+        //create an index for that  = 0, every time answer is clicked, index increases by 1 to get to the next question.
+        
+        //add buttons for answers
+
+            answers.push(
+                '<label>'
+
+                + '<input type="btn" name="question' + i + '" value="' +letter+'"'
+
+                + letter + ':'
+
+                + questions[i].answers[letter]
+
+                + '</label>'
+            
+            );
 
 
-    function displayQuestions (questions, QuizContainer){
+}
 
+        output.push(
+    
+            '<div class="question">' + questions[i].question + '</div>'
 
-    }
+            + '</div class="answers">'  + answers.join('') + '</div>'
+    
+        );
+
+    quizContainer.innerHTML = output.join('');
+  
+}
+
 
     function displayResults(questions, quizContainer, resultsContainer){
 
@@ -35,25 +77,16 @@ Create an event listener toi start the timer interval.a
             displayResults(questions, quizContainer, resultsContainer);
     }
 
- }
+ }}
 
  var quizQuestions = [
      {
         question: "String Values must be enclosed with __________ when being assigned to variables?",
 
-        answers: {
+        answers: ['Curly Brackets','Parentheses', 'Backticks','commas'],
+    
 
-            a: 'Curly Brackets',
-
-            b: 'Parentheses',
-
-            c: 'Backticks',
-
-            d: 'commas'
-
-        },
-
-            correctAnswer: 'a'
+            correctAnswer: 'Curly Brackets'
 
      },
 
@@ -63,19 +96,10 @@ Create an event listener toi start the timer interval.a
 
         question:'Commonly used data types do not include _______.',
 
-        answers: {
+        answers: ['Booleans','Alerts','Strings','Numbers'],
 
-            a: 'Booleans',
 
-            b: 'Alerts',
-
-            c: 'Strings',
-
-            d: 'Numbers',
-
-        },
-
-            correctAnswer: 'b'
+            correctAnswer: 'Alerts'
 
      },
 
@@ -85,19 +109,9 @@ Create an event listener toi start the timer interval.a
 
         question: 'The condition in an if/else statement is enclosed with ____________.',
 
-        answers: {
+        answers: ['Curly Brackets','Backticks','Commas','Parentheses',],
 
-            a: 'Curly Brackets',
-
-            b: 'Backticks',
-
-            c: 'Commas',
-
-            d: 'Parentheses',
-
-        },
-
-            correctAnswer: 'd',
+            correctAnswer: 'Parentheses',
 
      },
 
@@ -106,18 +120,10 @@ Create an event listener toi start the timer interval.a
      
         question: 'Arrays in JavaScript can be used to store ___________.',
 
-        answers: {
-            a: 'Booleans',
+        answers: ['Booleans','Numbers and Arrays','Strings','All of the above'],
+          
 
-            b: 'Numbers and Arrays',
-
-            c: 'Strings',
-
-            d: 'All of the above',
-       
-        },
-
-            correctAnswer: 'd'
+            correctAnswer: 'All of the above'
 
      },
 
@@ -127,35 +133,31 @@ Create an event listener toi start the timer interval.a
 
         question: 'A useful tool for development and debugging for printing to the debugger is _____________.',
 
-        answers: {
+        answers: ['For Loops','JavaScript','Terminal Bash', 'All of the above'],
+    
 
-            a: 'For Loops',
+        correctAnswer: 'For Loops'
 
-            b: 'JavaScript',
+     }]
 
-            c: 'Terminal Bash',
 
-            d: 'All of the above',
-
-        },
-
-        correctAnswer: 'a'
-
-     },
+     var buttonEl = document.querySelector('.btn1');
+     let queEl;
+     
+     
+     buttonEl.addEventListener('click', generateQuiz);
 
 
 
-
-
- create a time interval
+ //create a time interval
  
  
  
- create a certain amoiunt of time to give the user. Counting down from 60-0. 
+ //create a certain amoiunt of time to give the user. Counting down from 60-0. 
  
  
  
- decrease time by 5 seconds when questions are answered incorrectly.
+ //decrease time by 5 seconds when questions are answered incorrectly.
 
 
 // THEN I am presented with another question
@@ -171,8 +173,8 @@ Create an event listener toi start the timer interval.a
 
 
 // WHEN the game is over
-use local storage to keep the score.
+//use local storage to keep the score.
 // THEN I can save my initials and score
-pull from local storage to see top scores. 
-given ability to enter user initials for high score.a
-high scores created on a separate page. 
+//pull from local storage to see top scores. 
+//given ability to enter user initials for high score.a
+//high scores created on a separate page. 
