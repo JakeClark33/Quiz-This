@@ -27,36 +27,45 @@ displayQuestions()
 
         for(var i = 0; i < quizQuestions.length; i++) {
 
-            console.log(quizQuestions[i].answers);
-            answers = [];
+            var answers= quizQuestions[i].answers;
+            console.log(answers);
+            
+            var choiceElement = document.querySelector('.choices');
 
+           var newQuestion = document.querySelector('.question-text');
+        //    quizQuestions[i].questions
+           var quizMainQuestion = quizQuestions[i].question;
+           newQuestion.textContent = quizMainQuestion;
+
+            for (var j=0; j<answers.length; j++) {
+                console.log(answers[j]);
+                var btn  = document.createElement('button')
+
+
+            // var btn = document.querySelector('.choices');
+
+            btn.setAttribute('class', 'answers')
+            btn.setAttribute('value', answers[j]);
+            btn.textContent = j + answers [j]
+            choiceElement.append(btn);
+            }
         //create an index for that  = 0, every time answer is clicked, index increases by 1 to get to the next question.
         
         //add buttons for answers
-
-            answers.push(
-                '<label>'
-
-                + '<input type="btn" name="question' + i + '" value="' +letter+'"'
-
-                + letter + ':'
-
-                + questions[i].answers[letter]
-
-                + '</label>'
-            
-            );
+// Target index of current question to display current index only
+// Target the value qof the button as well. Pressed button, to compare to the correct answer in the object. 
+     
 
 
 }
 
-        output.push(
+        // output.push(
     
-            '<div class="question">' + questions[i].question + '</div>'
+        //     '<div class="question">' + questions[i].question + '</div>'
 
-            + '</div class="answers">'  + answers.join('') + '</div>'
+        //     + '</div class="answers">'  + answers.join('') + '</div>'
     
-        );
+        // );
 
     quizContainer.innerHTML = output.join('');
   
@@ -77,7 +86,7 @@ displayQuestions()
             displayResults(questions, quizContainer, resultsContainer);
     }
 
- }}
+ }
 
  var quizQuestions = [
      {
