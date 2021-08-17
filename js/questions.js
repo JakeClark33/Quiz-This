@@ -10,12 +10,24 @@
 // Create an array of all of the questions
 // All questions will need a title multiple choices and an answer.
  //Creeate a function that will ask one question at a time.
+var currentIndex = 0;
+var timerEl = document.querySelector('.timer');
+var time = 75;
 
- 
 
- function generateQuiz (quizContainer, resultsContainer, SubmitButton) {
-displayQuestions()
+//  function generateQuiz (quizContainer, resultsContainer, SubmitButton) {
 
+    var timeStart = function(){
+        var timerId = setInterval(function (){
+        time-- 
+        timerEl.textContent = time;
+        if (time === 0 ){
+            clearInterval(timerId)
+        }
+        displayQuestions()
+        },1000
+        )}
+        
     function displayQuestions (QuizContainer){
 
 
@@ -25,28 +37,28 @@ displayQuestions()
 
         //for each question reset the list of answers to
 
-        for(var i = 0; i < quizQuestions.length; i++) {
+        // for(var i = 0; i < quizQuestions.length; i++) {
 
-            var answers= quizQuestions[i].answers;
-            console.log(answers);
+            var answers= quizQuestions[currentIndex].answers;
+            
             
             var choiceElement = document.querySelector('.choices');
-
+            choiceElement.innerHTML = '';
            var newQuestion = document.querySelector('.question-text');
         //    quizQuestions[i].questions
-           var quizMainQuestion = quizQuestions[i].question;
+           var quizMainQuestion = quizQuestions[currentIndex].question;
            newQuestion.textContent = quizMainQuestion;
 
             for (var j=0; j<answers.length; j++) {
                 console.log(answers[j]);
                 var btn  = document.createElement('button')
-
+                btn.onclick = clickedQuestion
 
             // var btn = document.querySelector('.choices');
 
             btn.setAttribute('class', 'answers')
             btn.setAttribute('value', answers[j]);
-            btn.textContent = j + answers [j]
+            btn.textContent = j + answers[j]
             choiceElement.append(btn);
             }
         //create an index for that  = 0, every time answer is clicked, index increases by 1 to get to the next question.
@@ -57,7 +69,7 @@ displayQuestions()
      
 
 
-}
+// }
 
         // output.push(
     
@@ -69,8 +81,20 @@ displayQuestions()
 
     quizContainer.innerHTML = output.join('');
   
-}
+// }
 
+ function clickedQuestion () {
+ if (this.value === quizQuestions[currentIndex].correctAnswer){
+     alert('That is correct!')
+ }else {
+     time-= 5;
+     alert('Better luck next time!');
+ }
+
+    currentIndex++
+displayQuestions()
+
+} 
 
     function displayResults(questions, quizContainer, resultsContainer){
 
@@ -154,7 +178,7 @@ displayQuestions()
      let queEl;
      
      
-     buttonEl.addEventListener('click', generateQuiz);
+     buttonEl.addEventListener('click', timeStart);
 
 
 
