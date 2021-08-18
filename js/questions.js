@@ -28,7 +28,7 @@ var time = 75;
         },1000
         )}
         
-    function displayQuestions (QuizContainer){
+    function displayQuestions (quizContainer){
 
 
         var output = [];
@@ -180,6 +180,15 @@ displayQuestions()
      
      buttonEl.addEventListener('click', timeStart);
 
+     const startDiv = document.getElementById('info-box');
+     const btnEl2 = document.getElementById('work');
+     btnEl2.onclick = function () {
+         if (startDiv.style.display !== 'none') {
+             startDiv.style.display = 'none';
+         } else {
+             startDiv.style.display = 'block';
+         }
+     }
 
 
  //create a time interval
