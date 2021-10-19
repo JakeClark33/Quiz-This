@@ -181,7 +181,7 @@ displayQuestions()
      buttonEl.addEventListener('click', timeStart);
 
      const startDiv = document.getElementById('info-box');
-     const btnEl2 = document.getElementById('work');
+     const btnEl2 = document.getElementById('modal-button');
      btnEl2.onclick = function () {
          if (startDiv.style.display !== 'none') {
              startDiv.style.display = 'none';
@@ -219,4 +219,4 @@ displayQuestions()
 // THEN I can save my initials and score
 //pull from local storage to see top scores. 
 //given ability to enter user initials for high score.a
-//high scores created on a separate page. 
+//high scores created on a separate page.
