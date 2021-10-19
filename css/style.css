@@ -34,3 +34,40 @@
      background-color: rgb(174, 87, 255);
      color:cornsilk;
   }
+  .container {
+     
+      text-decoration-color: cornsilk;
+      position:absolute;
+      display: inline-flex;
+      width: 900px;;
+      height:400px;
+      bottom:50px;
+      right:auto;
+      left:500px;
+      margin-left:-150px;
+      align-items: center;
+  }
+  #questions {
+      font-size: larger;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder;
+      position:absolute;
+      top: 50px;
+      right: auto;
+      
+  }
+
+  .answers {
+      background-color: darkviolet; 
+      color: ivory;
+      margin-right: 5px;
+      margin-bottom: 20px;
+      width: 250px;
+      height: 25px;
+      display:flex;
+
+        
+      
+  }
+
+  

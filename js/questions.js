@@ -179,7 +179,6 @@ displayQuestions()
      
      
      buttonEl.addEventListener('click', timeStart);
-
      const startDiv = document.getElementById('info-box');
      const btnEl2 = document.getElementById('modal-button');
      btnEl2.onclick = function () {
