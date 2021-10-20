@@ -1,3 +1,6 @@
+const dataStore = window.localStorage;
+const dsKey = "high_scores";
+
 let currentQuestionIdx = 0;
 let time = 75;
 let correctAnswers = 0;
@@ -11,7 +14,7 @@ const questionWrapperEl = document.getElementById('question-wrapper');
 const resultsWrapperEl = document.getElementById('results-wrapper');
 const scoreEl = document.getElementById('score');
 const submitBtnEl = document.getElementById('submitBtn');
-
+const initialsInputEl = document.getElementById('initials');
 
 const timeStart = () => {
     const timerId = setInterval(function (){
@@ -73,8 +76,20 @@ const endQuiz = () => {
 }
 
 const handleSubmitClick = () => {
-    
+    const highScores = JSON.parse(dataStore.getItem(dsKey));
+    const newScore = {
+        score: correctAnswers,
+        initials: initialsInputEl.value,
+    };
+    highScores.push(newScore);
+    dataStore.setItem(dsKey, JSON.stringify(highScores));
+    window.location.href = 'highscore/index.html'
+}
+
+const initializeDataStore = () => {
+    if (!dataStore.getItem(dsKey)) dataStore.setItem(dsKey, JSON.stringify([]));
 }
 
 startBtnEl.addEventListener('click', handleStartClick);
 submitBtnEl.addEventListener('click', handleSubmitClick);
+initializeDataStore();    

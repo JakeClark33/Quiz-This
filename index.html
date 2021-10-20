@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/style.css">
         <title>Quiz-This</title>
-    </head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
     <body>  
         <header>
             <div class="highscore">
@@ -31,12 +32,14 @@
             <div id="question-wrapper">
                 <div class="question-text" id="questions"></div>
                 <div class="choices" id="allChoices"></div>
+                <div class="right" id="correct" style= "display: none;"></div>
+                <div class="wrong" id="notRight" style= "display: none;"></div>
             </div>
             <div id="results-wrapper" style="display: none;">
                 <h2>Congratulations! Your score was <span id="score">0</span>!</h2>
                 <p>Would you like to submit your score?</p>
                 <div>
-                    <label for="initials">Initials: </label><input type="text" name="initials">
+                    <label for="initials">Initials: </label><input id="initials" type="text" name="initials">
                 </div>
                 <br>
                 <button id="submitBtn">Submit</button>
