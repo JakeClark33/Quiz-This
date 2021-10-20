@@ -26,7 +26,7 @@ const timeStart = () => {
     }, 1000);
 }
 
-const displayQuestions = (quizQuestions) => {
+const displayQuestions = () => {
     const {answers, question} = quizQuestions[currentQuestionIdx];
     
     questionTxtEl.textContent = question;
