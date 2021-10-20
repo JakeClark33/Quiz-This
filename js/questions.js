@@ -15,6 +15,7 @@ const resultsWrapperEl = document.getElementById('results-wrapper');
 const scoreEl = document.getElementById('score');
 const submitBtnEl = document.getElementById('submitBtn');
 const initialsInputEl = document.getElementById('initials');
+const {answers, question} = quizQuestions[currentQuestionIdx];
 
 const timeStart = () => {
     const timerId = setInterval(function (){
@@ -27,7 +28,6 @@ const timeStart = () => {
 }
 
 const displayQuestions = () => {
-    const {answers, question} = quizQuestions[currentQuestionIdx];
     
     questionTxtEl.textContent = question;
     choicesEl.innerHTML = '';
