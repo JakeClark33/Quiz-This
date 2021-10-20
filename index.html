@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Quiz-This</title>
-</head>
-<Header>
-    <div class = "highscore">
-    <h4>
-        <a href= "./highscore/index.html">
-         View High Scores
-         </a>
-    </h4>
-    </div>
-    <div class = "timer">
-        <text>Time: <text></text>
-    </div>
-</Header>
-<br>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Quiz-This</title>
+    </head>
+    <body>  
+        <header>
+            <div class="highscore">
+                <h4><a href="./highscore/index.html">View High Scores</a></h4>
+            </div>
+            <div id="timer-wrapper">
+                <p>Time: <span id="timer">75</span></p>
+            </div>
+        </header>
 
-<body>  
-    <div id = 'info-box'>
-        <div class='info-title'><span class='welcome'>Welcome to the Quiz This coding quiz</span>
-            <p class='rules'>You will have 75 seconds to complete the quiz. For each correct answer you will receive points. For every
-                incorrect answer 5 seconds will be deducted from the timer. The quiz is over when you have completed all of the 
-                questions or time runs out.
-            </p>
-            <button id='modalBtn' class='btn1'>Start Quiz</button>
-        </div>  
-    </div>
-    <div id = 'myModal' class='container'>
-        <div class= "question-text" id= "questions">
-            <!--This is where the question will be inserted-->
+        <div id="info-box">
+            <div class="info-title"><span class="welcome">Welcome to the Quiz This coding quiz</span>
+                <p class="rules">You will have 75 seconds to complete the quiz. For each correct answer you will receive points. For every
+                    incorrect answer 5 seconds will be deducted from the timer. The quiz is over when you have completed all of the 
+                    questions or time runs out.
+                </p>
+                <button id="modalBtn" class="btn1">Start Quiz</button>
+            </div>  
         </div>
-        <div class='choices' id='allChoices'>
-            <!-- <button class="choice" id='A' onclick='checkAnswer("A")'></button>
-            <button class="choice" id='B' onclick='checkAnswer("B")'></button>
-            <button class="choice" id='C' onclick='checkAnswer("C")'></button>
-            <button class="choice" id='D' onclick='checkAnswer("D")'></button> -->
-            <!--This is where the answer choices will be entered-->
-        </div>
-    </div>
 
-    
-</body>
-<footer>
-    <div class="progress">
-        <!--This will show the question progress-->
-    </div>
-</footer>
-
-    <div class="result-box"></div>
-        <div class="completed-quiz"></div>
-        <div class="score-text">
-            <!--This is where the score will be inserted-->
+        <div id = "myModal" class="container">
+            <div id="question-wrapper">
+                <div class="question-text" id="questions"></div>
+                <div class="choices" id="allChoices"></div>
+            </div>
+            <div id="results-wrapper" style="display: none;">
+                <h2>Congratulations! Your score was <span id="score">0</span>!</h2>
+                <p>Would you like to submit your score?</p>
+                <div>
+                    <label for="initials">Initials: </label><input type="text" name="initials">
+                </div>
+                <br>
+                <button id="submitBtn">Submit</button>
+            </div>
         </div>
 
         
-        <script src = "./js/questions.js"></script>
+        
+        <script src="./js/quizQuestions.js"></script>
+        <script src="./js/questions.js"></script>
+    </body>
 </html>
